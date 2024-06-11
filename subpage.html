@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularseite</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Regierungslogo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                    <li><a href="subpage.html">Formularseite</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section class="content">
+                <h1>Formular ausfüllen</h1>
+                <form action="save_form.php" method="post">
+                    <label for="vorname">Vorname:</label>
+                    <input type="text" id="vorname" name="vorname" required>
+
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">E-Mail:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="dob">Geburtsdatum:</label>
+                    <input type="date" id="dob" name="dob" required>
+
+                    <label for="address">Adresse:</label>
+                    <input type="text" id="address" name="address" required>
+
+                    <label for="postleitzahl">Postleitzahl:</label>
+                    <input type="text" id="postleitzahl" name="postleitzahl" required>
+
+                    <label for="wohnort">Wohnort:</label>
+                    <input type="text" id="wohnort" name="wohnort" required>
+
+                    <fieldset>
+                        <legend>Alkoholkonsum</legend>
+                        <input type="checkbox" id="alkohol" name="alkohol" value="alkohol_mit">
+                        <label for="alkohol">Ich bringe Alkohol mit</label><br>
+                        <input type="checkbox" id="kein_alkohol" name="alkohol" value="kein_alkohol_mit">
+                        <label for="kein_alkohol">Ich bringe keinen Alkohol mit</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Wohnzimmerbesuch</legend>
+                        <input type="checkbox" id="wohnzimmer" name="wohnzimmer" value="bereits_im_wohnzimmer">
+                        <label for="wohnzimmer">Ich war bereits im Wohnzimmer</label><br>
+                        <input type="checkbox" id="nicht_wohnzimmer" name="wohnzimmer" value="noch_nicht_im_wohnzimmer">
+                        <label for="nicht_wohnzimmer">Ich war noch nicht im Wohnzimmer</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Stubenreinheit</legend>
+                        <input type="checkbox" id="stubenrein" name="stubenrein" value="stubenrein">
+                        <label for="stubenrein">Ich bin stubenrein</label><br>
+                        <input type="checkbox" id="nicht_stubenrein" name="stubenrein" value="nicht_stubenrein">
+                        <label for="nicht_stubenrein">Ich bin nicht stubenrein</label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Ja/Nein Frage</legend>
+                        <input type="radio" id="ja" name="ja_nein" value="ja" onclick="toggleNumberField(true)">
+                        <label for="ja">Ja</label><br>
+                        <input type="radio" id="nein" name="ja_nein" value="nein" onclick="toggleNumberField(false)">
+                        <label for="nein">Nein</label><br>
+                        <div id="numberField" style="display:none;">
+                            <label for="number">Wählen Sie eine Zahl zwischen 1 und 6:</label>
+                            <select id="number" name="number">
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <label for="message">Nachricht:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+
+                    <input type="submit" value="Absenden">
+                </form>
+                <a href="index.html" class="button">Zurück zur Startseite</a>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Regierung von Land. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+</body>
+</html>
